@@ -6,71 +6,73 @@
              mc:Ignorable="d"
              x:Class="App1.MainPage">
 
-    <Grid RowSpacing="0" ColumnSpacing="0" HorizontalOptions="Fill" VerticalOptions="Fill" SizeChanged="Grid_SizeChanged" x:Name="chessGrid">
-        <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png" Aspect="AspectFill"/>
-        <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="0" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="0" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="0" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="0" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="0" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="0" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="1" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="1" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="1" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="1" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="1" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="1" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="2" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="2" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="2" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="2" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="2" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="2" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="2" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="3" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="3" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="3" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="3" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="3" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="3" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="3" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="4" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="4" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="4" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="4" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="4" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="4" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="4" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="4" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="5" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="5" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="5" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="5" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="5" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="5" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="5" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="5" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="6" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="6" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="6" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="6" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="6" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="6" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="6" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="6" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="7" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="7" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="7" Grid.Column="2" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="7" Grid.Column="3" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="7" Grid.Column="4" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="7" Grid.Column="5" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
-        <Image Grid.Row="7" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
-        <Image Grid.Row="7" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
+    <Grid RowSpacing="0" ColumnSpacing="0" x:Name="chessGrid" HeightRequest="{Binding Source={x:Reference chessGrid}, Path=Width}">
+        
+        
+        <Image Grid.Row="0" Grid.Column="0" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="0" Grid.Column="1" BackgroundColor="#b58863" />
+        <Image Grid.Row="0" Grid.Column="2" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="0" Grid.Column="3" BackgroundColor="#b58863" />
+        <Image Grid.Row="0" Grid.Column="4" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="0" Grid.Column="5" BackgroundColor="#b58863" />
+        <Image Grid.Row="0" Grid.Column="6" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="0" Grid.Column="7" BackgroundColor="#b58863" />
+        <Image Grid.Row="1" Grid.Column="0" BackgroundColor="#b58863" />
+        <Image Grid.Row="1" Grid.Column="1" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="1" Grid.Column="2" BackgroundColor="#b58863" />
+        <Image Grid.Row="1" Grid.Column="3" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="1" Grid.Column="4" BackgroundColor="#b58863" />
+        <Image Grid.Row="1" Grid.Column="5" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="1" Grid.Column="6" BackgroundColor="#b58863" />
+        <Image Grid.Row="1" Grid.Column="7" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="2" Grid.Column="0" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="2" Grid.Column="1" BackgroundColor="#b58863" />
+        <Image Grid.Row="2" Grid.Column="2" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="2" Grid.Column="3" BackgroundColor="#b58863" />
+        <Image Grid.Row="2" Grid.Column="4" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="2" Grid.Column="5" BackgroundColor="#b58863" />
+        <Image Grid.Row="2" Grid.Column="6" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="2" Grid.Column="7" BackgroundColor="#b58863" />
+        <Image Grid.Row="3" Grid.Column="0" BackgroundColor="#b58863" />
+        <Image Grid.Row="3" Grid.Column="1" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="3" Grid.Column="2" BackgroundColor="#b58863" />
+        <Image Grid.Row="3" Grid.Column="3" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="3" Grid.Column="4" BackgroundColor="#b58863" />
+        <Image Grid.Row="3" Grid.Column="5" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="3" Grid.Column="6" BackgroundColor="#b58863" />
+        <Image Grid.Row="3" Grid.Column="7" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="4" Grid.Column="0" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="4" Grid.Column="1" BackgroundColor="#b58863" />
+        <Image Grid.Row="4" Grid.Column="2" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="4" Grid.Column="3" BackgroundColor="#b58863" />
+        <Image Grid.Row="4" Grid.Column="4" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="4" Grid.Column="5" BackgroundColor="#b58863" />
+        <Image Grid.Row="4" Grid.Column="6" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="4" Grid.Column="7" BackgroundColor="#b58863" />
+        <Image Grid.Row="5" Grid.Column="0" BackgroundColor="#b58863" />
+        <Image Grid.Row="5" Grid.Column="1" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="5" Grid.Column="2" BackgroundColor="#b58863" />
+        <Image Grid.Row="5" Grid.Column="3" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="5" Grid.Column="4" BackgroundColor="#b58863" />
+        <Image Grid.Row="5" Grid.Column="5" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="5" Grid.Column="6" BackgroundColor="#b58863" />
+        <Image Grid.Row="5" Grid.Column="7" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="6" Grid.Column="0" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="6" Grid.Column="1" BackgroundColor="#b58863" />
+        <Image Grid.Row="6" Grid.Column="2" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="6" Grid.Column="3" BackgroundColor="#b58863" />
+        <Image Grid.Row="6" Grid.Column="4" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="6" Grid.Column="5" BackgroundColor="#b58863" />
+        <Image Grid.Row="6" Grid.Column="6" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="6" Grid.Column="7" BackgroundColor="#b58863" />
+        <Image Grid.Row="7" Grid.Column="0" BackgroundColor="#b58863" />
+        <Image Grid.Row="7" Grid.Column="1" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="7" Grid.Column="2" BackgroundColor="#b58863" />
+        <Image Grid.Row="7" Grid.Column="3" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="7" Grid.Column="4" BackgroundColor="#b58863" />
+        <Image Grid.Row="7" Grid.Column="5" BackgroundColor="#f0d9b5" />
+        <Image Grid.Row="7" Grid.Column="6" BackgroundColor="#b58863" />
+        <Image Grid.Row="7" Grid.Column="7" BackgroundColor="#f0d9b5" />
     </Grid>
 
 </ContentPage>

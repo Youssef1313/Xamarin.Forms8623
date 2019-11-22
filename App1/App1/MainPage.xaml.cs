@@ -18,9 +18,9 @@ namespace App1
             InitializeComponent();
         }
 
-        //private void Grid_SizeChanged(object sender, EventArgs e)
-        //{
-        //    chessGrid.HeightRequest = chessGrid.Width;
-        //}
+        private void Grid_SizeChanged(object sender, EventArgs e)
+        {
+            chessGrid.HeightRequest = chessGrid.Width;
+        }
     }
 }
