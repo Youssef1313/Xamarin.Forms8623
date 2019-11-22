@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1.GreetPage"
+             BackgroundColor="#127ac7">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">0, 20, 0, 0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    
+    <StackLayout>
+        <Label Text="Youssef Photographer" HorizontalOptions="Center" TextColor="White" FontSize="30" FontAttributes="Bold" />
+        <Label Text="Cross-platform apps made easy" HorizontalOptions="Center" TextColor="White"  FontSize="18" />
+        <Button Text="Login" TextColor="White"  BackgroundColor="#1dabf0"/>
+        <Button Text="Register" TextColor="White" BackgroundColor="#1dabf0" />
+    </StackLayout>
+</ContentPage>
