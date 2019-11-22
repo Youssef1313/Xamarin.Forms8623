@@ -6,12 +6,6 @@
              mc:Ignorable="d"
              x:Class="App1.MainPage">
 
-    <StackLayout>
-        <Label Text="Hello, World!"></Label>
-        <Image Source="https://placehold.it/100"></Image>
-    </StackLayout>
-
-    <!--
     <Grid RowSpacing="0" ColumnSpacing="0" HorizontalOptions="Fill" VerticalOptions="Fill" SizeChanged="Grid_SizeChanged" x:Name="chessGrid">
         <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source="https://images.chesscomfiles.com/chess-themes/pieces/neo/150/bp.png" Aspect="AspectFill"/>
         <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
@@ -78,5 +72,5 @@
         <Image Grid.Row="7" Grid.Column="6" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#b58863" Source=""/>
         <Image Grid.Row="7" Grid.Column="7" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="#f0d9b5" Source=""/>
     </Grid>
-    -->
+
 </ContentPage>
