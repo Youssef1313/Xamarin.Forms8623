@@ -19,11 +19,13 @@ namespace App1
     {
         private GameBoard _board;
         private Square _activeSelection;
+        private List<Image> _colored;
 
         public MainPage()
         {
             InitializeComponent();
             _board = new GameBoard();
+            _colored = new List<Image>();
             DrawBoard();
         }
 
@@ -48,46 +50,86 @@ namespace App1
             }
         }
 
+        private void ClearColored()
+        {
+            foreach (Image colored in _colored)
+            {
+                Square coloredSquare = Square.Parse(colored.ClassId);
+                colored.BackgroundColor = (((int)coloredSquare.File + (int)coloredSquare.Rank) % 2 == 0) ? Color.FromRgb(181, 136, 99) : Color.FromRgb(240, 217, 181);
+            }
+            _colored = new List<Image>();
+        }
+
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
-            chessGrid.HeightRequest = width;
-            chessGrid.WidthRequest = width;
+            var min = (width < height) ? width : height;
+            chessGrid.HeightRequest = min;
+            chessGrid.WidthRequest = min;
         }
 
         protected void SquareTapped(object sender, EventArgs e)
         {
-            string squareName = ((Image)sender).ClassId;
-            Square sq = Square.Parse(squareName);
-            if (sq == _activeSelection)
+            var clickedImage = (Image)sender;
+            Square sq = Square.Parse(clickedImage.ClassId);
+            if (sq.Equals(_activeSelection))
             {
-                DrawBoard();
+                ClearColored();
                 return;
             }
 
             if (_activeSelection == null ||
                 !_board.IsValidMove(new Move(_activeSelection, sq, _board.WhoseTurn(), PawnPromotion.Queen)))
             {
+                ClearColored();
                 if (_board[sq] == null || _board[sq].Owner != _board.WhoseTurn()) return;
-                DrawBoard();
+
                 List<Move> validMoves = ChessUtilities.GetValidMovesOfSourceSquare(sq, _board);
                 if (validMoves.Count == 0) return;
                 _activeSelection = sq;
-                this.FindByName<Image>(sq.ToString()).BackgroundColor = Color.Cyan;
+                Image src = this.FindByName<Image>(sq.ToString());
+                src.BackgroundColor = Color.DarkCyan;
+                _colored.Add(src);
                 foreach (Move m in validMoves)
                 {
-                    this.FindByName<Image>(m.Destination.ToString()).BackgroundColor = Color.DarkCyan;
+                    Image dest = this.FindByName<Image>(m.Destination.ToString());
+                    dest.BackgroundColor = Color.Cyan;
+                    _colored.Add(dest);
                 }
 
             }
             else
             {
-                _board.MakeMove(new Move(_activeSelection, sq, _board.WhoseTurn(), PawnPromotion.Queen), false);
-                var sw = new Stopwatch();
-                sw.Start();
-                DrawBoard();
-                sw.Stop();
-                DisplayAlert("DrawBoard Duration", sw.ElapsedMilliseconds.ToString(), "OK");
+                _board.MakeMove(new Move(_activeSelection, sq, _board.WhoseTurn(), PawnPromotion.Queen), true);
+
+                Image src = this.FindByName<Image>(_activeSelection.ToString());
+                
+
+                Piece p1 = _board[sq];
+                Piece p2 = _board[_activeSelection];
+
+                if (p1 == null)
+                {
+                    clickedImage.Source = "";
+                }
+                else
+                {
+                    clickedImage.Source = $"{p1.Owner}{p1.GetType().Name}";
+                    clickedImage.Rotation = (p1.Owner == Player.White) ? 0 : 180;
+                }
+
+                if (p2 == null)
+                {
+                    src.Source = "";
+                }
+                else
+                {
+                    src.Source = $"{p2.Owner}{p2.GetType().Name}";
+                    src.Rotation = (p2.Owner == Player.White) ? 0 : 180;
+                }
+                ClearColored();
+                _activeSelection = null;
+
             }
 
 
