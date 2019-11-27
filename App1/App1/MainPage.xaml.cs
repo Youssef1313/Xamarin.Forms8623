@@ -9,6 +9,7 @@ using ChessLibrary.SquareData;
 using ChessLibrary.Pieces;
 using Xamarin.Forms;
 using System.Diagnostics;
+using App1.Models;
 
 namespace App1
 {
@@ -19,32 +20,47 @@ namespace App1
     {
         private GameBoard _board;
         private Square _activeSelection;
-        private List<Image> _colored;
+        private List<ChessSquare> _colored;
 
         public MainPage()
         {
             InitializeComponent();
             _board = new GameBoard();
-            _colored = new List<Image>();
+            _colored = new List<ChessSquare>();
+
+            /*
+            for (char c = 'A'; c <= 'H'; c++)
+            {
+                for (byte i = 1; i <= 8; i++)
+                {
+                    var chessSquare = new ChessSquare
+                    {
+                        Square = new Square(c, i)
+                    };
+                    chessSquare.GestureRecognizers.Add(new TapGestureRecognizer { Command = new Command(() => SquareTapped(chessSquare)) });
+                    chessGrid.Children.Add(chessSquare, c - 'A', '8' - i);
+                }
+            }
+            THIS IS NOT WORKING FOR UNKNOWN REASON. !!
+            */
             DrawBoard();
         }
 
         private void DrawBoard()
         {
-            foreach (View v in chessGrid.Children)
+            foreach (ChessSquare cq in chessGrid.Children)
             {
-                Square sq = Square.Parse(v.ClassId);
-                Piece p = _board[sq];
-                var image = (Image)v;
-                image.BackgroundColor = (((int)sq.File + (int)sq.Rank) % 2 == 0) ? Color.FromRgb(181, 136, 99) : Color.FromRgb(240, 217, 181);
+                //cq.Square = Square.Parse(cq.ClassId);
+                Piece p = _board[cq.Square];
+                cq.BackgroundColor = (((int)cq.Square.File + (int)cq.Square.Rank) % 2 == 0) ? Color.FromRgb(181, 136, 99) : Color.FromRgb(240, 217, 181);
                 if (p == null)
                 {
-                    image.Source = "";
+                    cq.Source = "";
                 }
                 else
                 {
-                    image.Source = $"{p.Owner}{p.GetType().Name}";
-                    image.Rotation = (p.Owner == Player.White) ? 0 : 180;
+                    cq.Source = $"{p.Owner}{p.GetType().Name}";
+                    cq.Rotation = (p.Owner == Player.White) ? 0 : 180;
                 }
 
             }
@@ -52,12 +68,12 @@ namespace App1
 
         private void ClearColored()
         {
-            foreach (Image colored in _colored)
+            foreach (ChessSquare colored in _colored)
             {
-                Square coloredSquare = Square.Parse(colored.ClassId);
-                colored.BackgroundColor = (((int)coloredSquare.File + (int)coloredSquare.Rank) % 2 == 0) ? Color.FromRgb(181, 136, 99) : Color.FromRgb(240, 217, 181);
+                colored.BackgroundColor = (((int)colored.Square.File + (int)colored.Square.Rank) % 2 == 0) ? Color.FromRgb(181, 136, 99) : Color.FromRgb(240, 217, 181);
             }
-            _colored = new List<Image>();
+            _colored = new List<ChessSquare>();
+            _activeSelection = null;
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -70,30 +86,28 @@ namespace App1
 
         protected async void SquareTapped(object sender, EventArgs e)
         {
-            var clickedImage = (Image)sender;
-            Square sq = Square.Parse(clickedImage.ClassId);
-            if (sq.Equals(_activeSelection))
+           ChessSquare chessSquare = (ChessSquare)sender;
+            if (chessSquare.Square.Equals(_activeSelection))
             {
                 ClearColored();
-                _activeSelection = null;
                 return;
             }
 
             if (_activeSelection == null ||
-                !_board.IsValidMove(new Move(_activeSelection, sq, _board.WhoseTurn(), PawnPromotion.Queen)))
+                !_board.IsValidMove(new Move(_activeSelection, chessSquare.Square, _board.WhoseTurn(), PawnPromotion.Queen)))
             {
                 ClearColored();
-                if (_board[sq] == null || _board[sq].Owner != _board.WhoseTurn()) return;
+                if (_board[chessSquare.Square] == null || _board[chessSquare.Square].Owner != _board.WhoseTurn()) return;
 
-                List<Move> validMoves = ChessUtilities.GetValidMovesOfSourceSquare(sq, _board);
+                List<Move> validMoves = ChessUtilities.GetValidMovesOfSourceSquare(chessSquare.Square, _board);
                 if (validMoves.Count == 0) return;
-                _activeSelection = sq;
-                Image src = this.FindByName<Image>(sq.ToString());
+                _activeSelection = chessSquare.Square;
+                ChessSquare src = this.FindByName<ChessSquare>(chessSquare.Square.ToString());
                 src.BackgroundColor = Color.DarkCyan;
                 _colored.Add(src);
                 foreach (Move m in validMoves)
                 {
-                    Image dest = this.FindByName<Image>(m.Destination.ToString());
+                    ChessSquare dest = this.FindByName<ChessSquare>(m.Destination.ToString());
                     dest.BackgroundColor = Color.Cyan;
                     _colored.Add(dest);
                 }
@@ -101,22 +115,22 @@ namespace App1
             }
             else
             {
-                _board.MakeMove(new Move(_activeSelection, sq, _board.WhoseTurn(), PawnPromotion.Queen), true);
+                _board.MakeMove(new Move(_activeSelection, chessSquare.Square, _board.WhoseTurn(), PawnPromotion.Queen), true);
 
-                Image src = this.FindByName<Image>(_activeSelection.ToString());
+                ChessSquare src = this.FindByName<ChessSquare>(_activeSelection.ToString());
                 
 
-                Piece p1 = _board[sq];
+                Piece p1 = _board[chessSquare.Square];
                 Piece p2 = _board[_activeSelection];
 
                 if (p1 == null)
                 {
-                    clickedImage.Source = "";
+                    chessSquare.Source = "";
                 }
                 else
                 {
-                    clickedImage.Source = $"{p1.Owner}{p1.GetType().Name}";
-                    clickedImage.Rotation = (p1.Owner == Player.White) ? 0 : 180;
+                    chessSquare.Source = $"{p1.Owner}{p1.GetType().Name}";
+                    chessSquare.Rotation = (p1.Owner == Player.White) ? 0 : 180;
                 }
 
                 if (p2 == null)
@@ -129,7 +143,6 @@ namespace App1
                     src.Rotation = (p2.Owner == Player.White) ? 0 : 180;
                 }
                 ClearColored();
-                _activeSelection = null;
 
                 GameState state = _board.GameState;
                 if (state == GameState.BlackWinner)
