@@ -68,13 +68,14 @@ namespace App1
             chessGrid.WidthRequest = min;
         }
 
-        protected void SquareTapped(object sender, EventArgs e)
+        protected async void SquareTapped(object sender, EventArgs e)
         {
             var clickedImage = (Image)sender;
             Square sq = Square.Parse(clickedImage.ClassId);
             if (sq.Equals(_activeSelection))
             {
                 ClearColored();
+                _activeSelection = null;
                 return;
             }
 
@@ -129,6 +130,20 @@ namespace App1
                 }
                 ClearColored();
                 _activeSelection = null;
+
+                GameState state = _board.GameState;
+                if (state == GameState.BlackWinner)
+                {
+                    await DisplayAlert("Game over!", "Black has won the game.", "OK");
+                }
+                else if (state == GameState.WhiteWinner)
+                {
+                    await DisplayAlert("Game over!", "White has won the game.", "OK");
+                }
+                else if (state == GameState.Stalemate || state == GameState.Draw)
+                {
+                    await DisplayAlert("Game over!", "Game is draw.", "OK");
+                }
 
             }
 
