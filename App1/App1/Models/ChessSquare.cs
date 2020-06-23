@@ -1,4 +1,4 @@
-﻿using ChessLibrary.SquareData;
+﻿using ChessSharp.SquareData;
 using Xamarin.Forms;
 
 namespace App1.Models

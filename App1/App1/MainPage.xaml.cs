@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ChessLibrary;
-using ChessLibrary.SquareData;
-using ChessLibrary.Pieces;
-using Xamarin.Forms;
-using System.Diagnostics;
 using App1.Models;
+using ChessSharp;
+using ChessSharp.Pieces;
+using ChessSharp.SquareData;
+using Xamarin.Forms;
 
 namespace App1
 {
